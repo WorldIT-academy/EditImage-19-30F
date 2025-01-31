@@ -4,7 +4,6 @@ r"""
     Приклад використання:
     
     ```python
-        print("\nHello")
         self.CONTENT = FrameApp(
             master_child = self,
             width_child = self.WIDTH,
@@ -28,6 +27,15 @@ class FrameApp(ctk.CTkFrame):
         - `bg_color_child` - колір фону створюванного елементу
     """
     def __init__(self, master_child: object, width_child: int, height_child: int, bg_color_child: str):
+        r"""
+        ### Інструкція (клас), що допомогає створювати та налаштовувати вікна в додатку
+
+        #### Параметри класу FrameApp:
+            - `master_child` - батьківський елемент, до якого потрібно додати вікно
+            - `width_child` - ширина створюванного елементу
+            - `height_child` - висота створюванного елементу
+            - `bg_color_child` - колір фону створюванного елементу
+        """
         ctk.CTkFrame.__init__(
             self = self,
             master = master_child,
