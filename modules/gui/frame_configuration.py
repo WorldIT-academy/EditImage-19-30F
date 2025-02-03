@@ -11,7 +11,6 @@ r"""
             bg_color_child = "#1F1F1F"
         )  
     ```
-    r перед многострочным комментарием игнорирует специальные символы ( \n ) в тексте
     [Посилання на github файлу](https://github.com/WorldIT-academy/EditImage-19-30F/blob/master/modules/gui/frame_configuration.py)
 """
 import customtkinter as ctk

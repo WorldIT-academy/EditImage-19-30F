@@ -1,5 +1,6 @@
 import customtkinter as ctk
 from .frame_configuration import FrameApp
+from .button import ButtonApp
 
 class App(ctk.CTk):
     def __init__(self):
@@ -73,4 +74,13 @@ class App(ctk.CTk):
         )
         
         self.IMAGE_BLOCK.place(x = 0, y = self.HEIGHT * 0.0391)
+
+        self.OPEN_BUTTON = ButtonApp(
+            master = self.VERTICAL_MENU,
+            width = self.WIDTH * 0.055 * 0.5,
+            height =  self.WIDTH * 0.055 * 0.5,
+            name_image = "explorer.png",
+        )
+        self.OPEN_BUTTON.place(x = 5, y = 10)
+        
 app = App()
