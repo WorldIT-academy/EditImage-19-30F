@@ -1,6 +1,7 @@
 import customtkinter as ctk
 import os
 import PIL.Image
+from ..create_folder import RED , RESET_ALL, YELLOW
 
 class ButtonApp(ctk.CTkButton):
     def __init__(self, master: object, width: int, height: int, name_image: str, command = None, text = None,**kwargs):
@@ -22,8 +23,11 @@ class ButtonApp(ctk.CTkButton):
         )
     def load_image(self):
         path = os.path.abspath(os.path.join(__file__, '..', '..', '..', 'static', 'icons', self.NAME_IMAGE))
-        image = PIL.Image.open(path)
-        return ctk.CTkImage(
-            light_image = image,
-            size = self.SIZE
-        )
+        try:    
+            image = PIL.Image.open(path)
+            return ctk.CTkImage(
+                light_image = image,
+                size = self.SIZE
+            )
+        except Exception as error:
+            print(f'{RED}Error load image: {YELLOW}{error}{RESET_ALL}')

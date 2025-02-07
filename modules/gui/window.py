@@ -1,6 +1,7 @@
 import customtkinter as ctk
 from .frame_configuration import FrameApp
 from .button import ButtonApp
+from ..open_image import open_file
 
 class App(ctk.CTk):
     def __init__(self):
@@ -80,6 +81,7 @@ class App(ctk.CTk):
             width = self.WIDTH * 0.055 * 0.5,
             height =  self.WIDTH * 0.055 * 0.5,
             name_image = "explorer.png",
+            command = lambda: open_file()
         )
         self.OPEN_BUTTON.place(x = 5, y = 10)
         
