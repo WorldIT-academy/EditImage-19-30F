@@ -1,7 +1,7 @@
 import customtkinter as ctk
 from .frame_configuration import FrameApp
 from .button import ButtonApp
-from ..open_image import open_file
+from ..tools.open_image import open_file
 
 class App(ctk.CTk):
     def __init__(self):
@@ -48,6 +48,7 @@ class App(ctk.CTk):
             height_child= self.HEIGHT - header_height - 1,
             bg_color_child = "#1F1F1F"
         )
+        self.EXPLORER.pack_propagate(False)
         self.EXPLORER.place(x = self.WIDTH * 0.055, y = 0)
         x_image = self.WIDTH * 0.15 + self.WIDTH * 0.055 
         self.SHOW_IMAGE = FrameApp(
@@ -81,8 +82,9 @@ class App(ctk.CTk):
             width = self.WIDTH * 0.055 * 0.5,
             height =  self.WIDTH * 0.055 * 0.5,
             name_image = "explorer.png",
-            command = lambda: open_file()
+            command = lambda: open_file(button_master = self.EXPLORER)
         )
-        self.OPEN_BUTTON.place(x = 5, y = 10)
+        self.VERTICAL_MENU.pack_propagate(False)
+        self.OPEN_BUTTON.pack(pady = 10)
         
 app = App()

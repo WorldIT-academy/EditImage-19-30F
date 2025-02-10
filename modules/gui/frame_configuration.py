@@ -25,7 +25,7 @@ class FrameApp(ctk.CTkFrame):
         - `height_child` - висота створюванного елементу
         - `bg_color_child` - колір фону створюванного елементу
     """
-    def __init__(self, master_child: object, width_child: int, height_child: int, bg_color_child: str):
+    def __init__(self, master_child: ctk.CTkFrame | ctk.CTk, width_child: int, height_child: int, bg_color_child: str):
         r"""
         ### Інструкція (клас), що допомогає створювати та налаштовувати вікна в додатку
 
