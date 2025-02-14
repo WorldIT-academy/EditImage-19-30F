@@ -1,5 +1,5 @@
 import customtkinter as ctk
-from .frame_configuration import FrameApp
+from .frame import FrameApp
 from .button import ButtonApp
 from ..tools.open_image import open_file
 
@@ -76,13 +76,14 @@ class App(ctk.CTk):
         )
         
         self.IMAGE_BLOCK.place(x = 0, y = self.HEIGHT * 0.0391)
+        self.IMAGE_BLOCK.pack_propagate(False)
 
         self.OPEN_BUTTON = ButtonApp(
             master = self.VERTICAL_MENU,
             width = self.WIDTH * 0.055 * 0.5,
             height =  self.WIDTH * 0.055 * 0.5,
             name_image = "explorer.png",
-            command = lambda: open_file(button_master = self.EXPLORER)
+            command = lambda: open_file(button_master = self.EXPLORER, parent = self, image_master = self.IMAGE_BLOCK  )
         )
         self.VERTICAL_MENU.pack_propagate(False)
         self.OPEN_BUTTON.pack(pady = 10)
