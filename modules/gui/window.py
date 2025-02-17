@@ -83,7 +83,7 @@ class App(ctk.CTk):
             width = self.WIDTH * 0.055 * 0.5,
             height =  self.WIDTH * 0.055 * 0.5,
             name_image = "explorer.png",
-            command = lambda: open_file(button_master = self.EXPLORER, parent = self, image_master = self.IMAGE_BLOCK  )
+            command = lambda: open_file(button_master = self.EXPLORER, parent = self, image_master = self.IMAGE_BLOCK)
         )
         self.VERTICAL_MENU.pack_propagate(False)
         self.OPEN_BUTTON.pack(pady = 10)
